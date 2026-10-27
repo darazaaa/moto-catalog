@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кибербезопасность | Кызылординский университет имени Коркыт Ата</title>
+  <meta name="description" content="Официальный сайт образовательной программы «Кибербезопасность» (6B06303) Кызылординского университета имени Коркыт Ата. Институт искусственного интеллекта совместно с SeoulTech.">
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       ЧИСТЫЙ FLAT DESIGN (ПЛОСКИЙ СТИЛЬ БЕЗ БЛИКОВ И ТЕНЕЙ)
+       Университет Коркыт Ата — Кибербезопасность
+       ========================================================== */
+    :root {
+      --color-bg: #f9fafb;
+      --color-white: #ffffff;
+      --color-dark: #1f2937;
+      --color-muted: #4b5563;
+      --color-subtle: #6b7280;
+      
+      --color-border: #e5e7eb;
+      --color-border-dark: #d1d5db;
+      
+      --color-blue: #0071e3;
+      --color-blue-hover: #005bb5;
+      --color-blue-light: #eff6ff;
+      
+      --color-teal: #0f414a;
+      --color-teal-hover: #0a2d33;
+      --color-peach: #ffe5b6;
+      --color-green: #059669;
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-pill: 9999px;
+      
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-dark);
+      font-family: var(--font-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==========================================================
+       НАВИГАЦИЯ (FLAT PILL NAVBAR)
+       ========================================================== */
+    .nav-wrapper {
+      position: sticky;
+      top: 14px;
+      z-index: 100;
+      padding: 0 16px;
+      margin-bottom: 30px;
+    }
+
+    .navbar-flat {
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 10px 14px 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-flat {
+      width: 38px;
+      height: 38px;
+      background-color: var(--color-blue);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-pill);
+    }
+
+    .brand-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      color: var(--color-subtle);
+      font-weight: 500;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      transition: color 0.15s;
+    }
+
+    .nav-link:hover {
+      color: var(--color-blue);
+    }
+
+    /* ==========================================================
+       ПЛОСКИЕ КНОПКИ (FLAT BUTTONS - БЕЗ БЛИКОВ И ГРАДИЕНТОВ)
+       ========================================================== */
+    .btn-flat {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      background-color: var(--color-blue);
+      color: #ffffff;
+      box-shadow: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-flat:hover {
+      background-color: var(--color-blue-hover);
+    }
+
+    .btn-flat-secondary {
+      background-color: #f3f4f6;
+      color: var(--color-dark);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-flat-secondary:hover {
+      background-color: #e5e7eb;
+      border-color: var(--color-border-dark);
+    }
+
+    .btn-flat-teal {
+      background-color: var(--color-teal);
+      color: #ffffff;
+    }
+
+    .btn-flat-teal:hover {
+      background-color: var(--color-teal-hover);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      color: var(--color-dark);
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
+    /* ==========================================================
+       HERO СЕКЦИЯ С FLAT ИЛЛЮСТРАЦИЕЙ
+       ========================================================== */
+    .hero-wrap {
+      padding: 30px 0 50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-heading {
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      color: var(--color-dark);
+      margin-bottom: 18px;
+    }
+
+    .hero-heading span.highlight {
+      color: var(--color-blue);
+    }
+
+    .hero-text {
+      font-size: 1.05rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 580px;
+    }
+
+    .hero-btn-row {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .flat-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .flat-tag {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      color: var(--color-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+    }
+
+    .flat-tag strong {
+      color: var(--color-dark);
+    }
+
+    /* Flat SVG контейнер */
+    .flat-illustration-box {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flat-illustration-box svg {
+      width: 100%;
+      height: auto;
+      max-height: 340px;
+      display: block;
+    }
+
+    /* ==========================================================
+       СТАТИСТИЧЕСКИЕ КАРТОЧКИ (FLAT STATS)
+       ========================================================== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 40px 0 60px;
+    }
+
+    .stat-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 22px 18px;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--color-blue);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .stat-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ==========================================================
+       ЗАГОЛОВКИ СЕКЦИЙ
+       ========================================================== */
+    .section-wrap {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 46px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================
+       СЕКЦИЯ SEOULTECH & AI ИНСТИТУТ (FLAT TEAL)
+       ========================================================== */
+    .flat-teal-section {
+      background-color: var(--color-teal);
+      border-radius: var(--radius-xl);
+      padding: 44px;
+      color: #ffffff;
+      margin: 20px 0 50px;
+    }
+
+    .teal-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .teal-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.12);
+      color: var(--color-peach);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 16px;
+    }
+
+    .teal-title {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .teal-desc {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .teal-feature-card {
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+
+    .teal-feature-card h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-peach);
+      margin-bottom: 4px;
+    }
+
+    .teal-feature-card p {
+      font-size: 0.84rem;
+      color: #d1d5db;
+      line-height: 1.45;
+    }
+
+    /* ==========================================================
+       СПЕЦИАЛИЗАЦИИ (FLAT CARDS)
+       ========================================================== */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .spec-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease;
+    }
+
+    .spec-card:hover {
+      border-color: var(--color-blue);
+    }
+
+    .spec-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .spec-icon-box svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--color-blue);
+    }
+
+    .spec-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin-bottom: 10px;
+    }
+
+    .spec-card p {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .pill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill-tag {
+      background-color: #f3f4f6;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-dark);
+    }
+
+    /* ==========================================================
+       УЧЕБНЫЙ ПЛАН (FLAT TABS)
+       ========================================================== */
+    .tabs-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      background-color: #f3f4f6;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 6px;
+      max-width: 460px;
+      margin: 0 auto 30px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-subtle);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn.active {
+      background-color: var(--color-white);
+      color: var(--color-dark);
+      border: 1px solid var(--color-border-dark);
+    }
+
+    .curriculum-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .curriculum-item {
+      background-color: #f9fafb;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .curriculum-item h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin-bottom: 6px;
+    }
+
+    .curriculum-item p {
+      font-size: 0.82rem;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ==========================================================
+       КАРЬЕРА И ПАРТНЕРЫ (FLAT CAREER)
+       ========================================================== */
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .career-box {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+    }
+
+    .career-box h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin-bottom: 6px;
+    }
+
+    .career-salary {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+
+    .career-box p {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      line-height: 1.45;
+    }
+
+    .partners-flat-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .partner-chip {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+
+    /* ==========================================================
+       ПОСТУПЛЕНИЕ И КОНСУЛЬТАЦИЯ
+       ========================================================== */
+    .adm-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+
+    .adm-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .adm-details h3 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .adm-details p {
+      font-size: 0.92rem;
+      color: var(--color-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .adm-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .adm-list li {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .adm-list li strong {
+      color: var(--color-dark);
+    }
+
+    .flat-form {
+      background-color: #f9fafb;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .flat-form h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      margin-bottom: 14px;
+    }
+
+    .flat-input {
+      width: 100%;
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: var(--color-dark);
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .flat-input:focus {
+      border-color: var(--color-blue);
+    }
+
+    /* ==========================================================
+       ПОДВАЛ (FLAT FOOTER)
+       ========================================================== */
+    .site-footer {
+      background-color: var(--color-white);
+      border-top: 1px solid var(--color-border);
+      padding: 40px 0 24px;
+      margin-top: 50px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .footer-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-role {
+      font-size: 0.78rem;
+      color: var(--color-subtle);
+    }
+
+    .footer-phone-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #f3f4f6;
+      border: 1px solid var(--color-border);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+
+    .footer-phone-btn:hover {
+      background-color: #e5e7eb;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--color-subtle);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* ==========================================================
+       АДАПТИВНОСТЬ
+       ========================================================== */
+    @media (max-width: 960px) {
+      .hero-grid, .teal-grid, .adm-grid {
+        grid-template-columns: 1fr;
+      }
+      .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid, .career-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .curriculum-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid, .career-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-heading {
+        font-size: 2.1rem;
+      }
+      .flat-teal-section {
+        padding: 28px 20px;
+      }
+      .footer-top, .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Навигация (Flat Pill Navbar) -->
+  <div class="nav-wrapper">
+    <header class="navbar-flat">
+      <a href="#" class="brand">
+        <div class="brand-logo-flat">ҚА</div>
+        <div>
+          <div class="brand-title">Университет Коркыт Ата</div>
+          <div class="brand-subtitle">Институт искусственного интеллекта</div>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">О специальности</a></li>
+        <li><a href="#seoultech" class="nav-link">SeoulTech</a></li>
+        <li><a href="#curriculum" class="nav-link">Учебный план</a></li>
+        <li><a href="#career" class="nav-link">Карьера</a></li>
+        <li><a href="#admission" class="nav-link">Поступление</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <a href="#admission" class="btn-flat">Подать документы</a>
+        <button class="mobile-menu-btn" onclick="alert('Разделы сайта: О специальности, SeoulTech, Учебный план, Карьера, Поступление')">&#9776;</button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero секция -->
+  <section class="hero-wrap">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Левая текстовая колонка -->
+        <div>
+          <h1 class="hero-heading">
+            Кибербезопасность &amp;<br>
+            <span class="highlight">Защита данных</span>
+          </h1>
+
+          <p class="hero-text">
+            Подготовка инженеров информационной безопасности, пентестеров и аналитиков SOC-центров. Обучение в партнерстве с Сеульским национальным университетом науки и технологий (SeoulTech, Южная Корея) и европейским проектом Erasmus+ Cyber4CA.
+          </p>
+
+          <div class="hero-btn-row">
+            <a href="#admission" class="btn-flat">Условия приема 2026</a>
+            <a href="#curriculum" class="btn-flat btn-flat-secondary">Учебные дисциплины</a>
+          </div>
+
+          <div class="flat-tags-row">
+            <span class="flat-tag">Шифр: <strong>6B06303</strong></span>
+            <span class="flat-tag">Степень: <strong>Бакалавриат</strong></span>
+            <span class="flat-tag">Срок: <strong>4 года</strong></span>
+            <span class="flat-tag">ЕНТ: <strong>Математика + Информатика</strong></span>
+          </div>
+        </div>
+
+        <!-- Правая колонка: Flat векторная иллюстрация -->
+        <div class="flat-illustration-box">
+          <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+            <!-- Фоновые плоские элементы -->
+            <rect x="20" y="20" width="420" height="280" rx="16" fill="#F3F4F6"/>
+            
+            <!-- Серверная стойка (Flat) -->
+            <rect x="50" y="60" width="80" height="190" rx="6" fill="#1F2937"/>
+            <rect x="60" y="75" width="60" height="20" rx="3" fill="#374151"/>
+            <circle cx="70" cy="85" r="3" fill="#10B981"/>
+            <circle cx="80" cy="85" r="3" fill="#0071E3"/>
+            
+            <rect x="60" y="105" width="60" height="20" rx="3" fill="#374151"/>
+            <circle cx="70" cy="115" r="3" fill="#10B981"/>
+            <circle cx="80" cy="115" r="3" fill="#0071E3"/>
+
+            <rect x="60" y="135" width="60" height="20" rx="3" fill="#374151"/>
+            <circle cx="70" cy="145" r="3" fill="#10B981"/>
+            <circle cx="80" cy="145" r="3" fill="#F59E0B"/>
+
+            <rect x="60" y="165" width="60" height="20" rx="3" fill="#374151"/>
+            <circle cx="70" cy="175" r="3" fill="#10B981"/>
+            <circle cx="80" cy="175" r="3" fill="#10B981"/>
+
+            <!-- Рабочая станция / Монитор (Flat) -->
+            <rect x="160" y="90" width="220" height="140" rx="8" fill="#1F2937"/>
+            <rect x="170" y="100" width="200" height="120" rx="4" fill="#0F414A"/>
+            
+            <!-- Код на экране -->
+            <rect x="185" y="115" width="70" height="6" rx="3" fill="#FFE5B6"/>
+            <rect x="185" y="128" width="110" height="6" rx="3" fill="#E5E7EB"/>
+            <rect x="185" y="141" width="90" height="6" rx="3" fill="#E5E7EB"/>
+            <rect x="185" y="154" width="60" height="6" rx="3" fill="#0071E3"/>
+            <rect x="185" y="167" width="130" height="6" rx="3" fill="#10B981"/>
+
+            <!-- Подставка монитора -->
+            <rect x="255" y="230" width="30" height="30" fill="#9CA3AF"/>
+            <rect x="230" y="260" width="80" height="8" rx="4" fill="#6B7280"/>
+
+            <!-- Большой щит безопасности (Flat Shield) -->
+            <path d="M 330,70 L 400,100 L 400,160 C 400,200 330,230 330,230 C 330,230 260,200 260,160 L 260,100 Z" fill="#0071E3"/>
+            <!-- Внутренний замок -->
+            <rect x="316" y="140" width="28" height="22" rx="4" fill="#FFFFFF"/>
+            <path d="M 322,140 L 322,128 C 322,122 338,122 338,128 L 338,140" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="330" cy="150" r="2.5" fill="#0071E3"/>
+
+            <!-- Плашка статуса -->
+            <rect x="170" y="240" width="110" height="24" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+            <circle cx="182" cy="252" r="4" fill="#10B981"/>
+            <text x="194" y="256" font-family="sans-serif" font-size="9" font-weight="bold" fill="#1F2937">DEFENSE: OK</text>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- Ключевые показатели программы -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val">6B06303</div>
+          <div class="stat-text">Код специальности</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">SeoulTech</div>
+          <div class="stat-text">Партнерский вуз (Сеул)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">4 года</div>
+          <div class="stat-text">Срок обучения</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">100%</div>
+          <div class="stat-text">Трудоустройство</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Секция SeoulTech & AI Институт (Flat Dark Teal) -->
+  <section class="section-wrap" id="seoultech" style="padding-top: 0;">
+    <div class="container">
+      <div class="flat-teal-section">
+        <div class="teal-grid">
+          
+          <div>
+            <span class="teal-badge">Международное партнерство</span>
+            <h2 class="teal-title">Институт искусственного интеллекта &amp; SeoulTech</h2>
+            <p class="teal-desc">
+              В 2023 году на базе Кызылординского университета имени Коркыт Ата открыт Институт искусственного интеллекта в прямом сотрудничестве с Сеульским национальным университетом науки и технологий (SeoulTech). Студенты специальности обучаются по передовым международным планам и имеют возможность участия в программе «2+2» с получением двойного диплома Республики Корея и Казахстана.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="pill-tag" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: #fff;">
+                Сеул, Южная Корея
+              </span>
+              <span class="pill-tag" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: #fff;">
+                Двойной диплом 2+2
+              </span>
+              <span class="pill-tag" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); color: #fff;">
+                ЕС Erasmus+ Cyber4CA
+              </span>
+            </div>
+          </div>
+
+          <!-- Flat карточки институтов -->
+          <div>
+            <div class="teal-feature-card">
+              <h4>Программа двойного диплома 2+2</h4>
+              <p>Первые два года студенты учатся в Кызылорде, а 3 и 4 курсы — в кампусе SeoulTech в Южной Корее с получением диплома международного образца.</p>
+            </div>
+            <div class="teal-feature-card">
+              <h4>Лаборатории кибербезопасности CyberLabs</h4>
+              <p>Оснащение современными сетевыми стендами в рамках проекта Европейского Союза Erasmus+ Cyber4CA (2025–2028 гг.).</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Спецификации / Направления подготовки -->
+  <section class="section-wrap" id="about">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-label">Профиль подготовки</span>
+        <h2 class="section-title">Чему учат на специальности</h2>
+        <p class="section-desc">
+          Программа совмещает фундаментальную математику, сетевое администрирование и практические навыки защиты корпоративных систем.
+        </p>
+      </div>
+
+      <div class="spec-grid">
+        
+        <!-- Карточка 1: Пентестинг -->
+        <div class="spec-card">
+          <div>
+            <div class="spec-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+            <h3>Этичный хакинг и пентестинг</h3>
+            <p>
+              Поиск и эксплуатация брешей в веб-ресурсах и сетевых сервисах по международному стандарту OWASP Top 10.
+            </p>
+          </div>
+          <div class="pill-tags">
+            <span class="pill-tag">Kali Linux</span>
+            <span class="pill-tag">Burp Suite</span>
+            <span class="pill-tag">Metasploit</span>
+          </div>
+        </div>
+
+        <!-- Карточка 2: SOC -->
+        <div class="spec-card">
+          <div>
+            <div class="spec-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </div>
+            <h3>Центры мониторинга (SOC)</h3>
+            <p>
+              Круглосуточное выявление инцидентов, сбор системных логов в SIEM-платформах и нейтрализация атак.
+            </p>
+          </div>
+          <div class="pill-tags">
+            <span class="pill-tag">Splunk</span>
+            <span class="pill-tag">Wireshark</span>
+            <span class="pill-tag">Wazuh</span>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Криптография -->
+        <div class="spec-card">
+          <div>
+            <div class="spec-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            </div>
+            <h3>Прикладная криптография</h3>
+            <p>
+              Симметричные и асимметричные шифры, инфраструктура открытых ключей (PKI), электронная подпись (ЭЦП).
+            </p>
+          </div>
+          <div class="pill-tags">
+            <span class="pill-tag">AES-256</span>
+            <span class="pill-tag">RSA</span>
+            <span class="pill-tag">OpenSSL</span>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Безопасность ИИ -->
+        <div class="spec-card">
+          <div>
+            <div class="spec-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M21 16.5c0 .83-.67 1.5-1.5 1.5h-15c-.83 0-1.5-.67-1.5-1.5v-9c0-.83.67-1.5 1.5-1.5h15c.83 0 1.5.67 1.5 1.5v9zm-13.5-6h-2v3h2v-3zm5 0h-2v3h2v-3zm5 0h-2v3h2v-3z"/></svg>
+            </div>
+            <h3>Безопасность систем ИИ</h3>
+            <p>
+              Защита алгоритмов машинного обучения от состязательных атак и использование ИИ для обнаружения угроз.
+            </p>
+          </div>
+          <div class="pill-tags">
+            <span class="pill-tag">AI Security</span>
+            <span class="pill-tag">Python</span>
+            <span class="pill-tag">SeoulTech Lab</span>
+          </div>
+        </div>
+
+        <!-- Карточка 5: Форензика -->
+        <div class="spec-card">
+          <div>
+            <div class="spec-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <h3>Digital Forensics &amp; Реверс</h3>
+            <p>
+              Снятие дампов памяти, анализ вредоносных бинарных файлов и извлечение юридических доказательств.
+            </p>
+          </div>
+          <div class="pill-tags">
+            <span class="pill-tag">Ghidra</span>
+            <span class="pill-tag">Volatility</span>
+            <span class="pill-tag">x64dbg</span>
+          </div>
+        </div>
+
+        <!-- Карточка 6: DevSecOps -->
+        <div class="spec-card">
+          <div>
+            <div class="spec-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
+            </div>
+            <h3>DevSecOps &amp; Cloud Security</h3>
+            <p>
+              Внедрение проверок защищенности в процесс разработки ПО, безопасность Docker и Kubernetes.
+            </p>
+          </div>
+          <div class="pill-tags">
+            <span class="pill-tag">Docker</span>
+            <span class="pill-tag">CI/CD</span>
+            <span class="pill-tag">Linux</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Учебный план (Flat Tabs) -->
+  <section class="section-wrap" id="curriculum">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-label">Академический трек</span>
+        <h2 class="section-title">Учебный план по курсам</h2>
+        <p class="section-desc">
+          Последовательное освоение профильных дисциплин с первого по четвертый курс.
+        </p>
+      </div>
+
+      <div class="tabs-bar">
+        <button class="tab-btn active" onclick="switchCourse('c1', this)">1 курс</button>
+        <button class="tab-btn" onclick="switchCourse('c2', this)">2 курс</button>
+        <button class="tab-btn" onclick="switchCourse('c3', this)">3 курс</button>
+        <button class="tab-btn" onclick="switchCourse('c4', this)">4 курс</button>
+      </div>
+
+      <div class="curriculum-card">
+        
+        <!-- 1 КУРС -->
+        <div id="c1" class="tab-content active">
+          <div class="curriculum-grid">
+            <div class="curriculum-item">
+              <h4>Архитектура вычислительных систем</h4>
+              <p>Организация процессора, регистры, стек, низкоуровневые инструкции ассемблера.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Компьютерные сети (Стек TCP/IP)</h4>
+              <p>Модель OSI, адресация IPv4/IPv6, маршрутизация и анализ сетевого трафика в Wireshark.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Программирование (Python &amp; C++)</h4>
+              <p>Основы синтаксиса, алгоритмы, управление памятью и скрипты автоматизации.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Высшая математика и дискретные структуры</h4>
+              <p>Теория чисел, алгебра логики, графы и комбинаторика для построения шифров.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 КУРС -->
+        <div id="c2" class="tab-content">
+          <div class="curriculum-grid">
+            <div class="curriculum-item">
+              <h4>Операционные системы и администрирование Linux</h4>
+              <p>Управление правами доступа, модули ядра, безопасность файловых систем и Bash-скрипты.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Основы прикладной криптографии</h4>
+              <p>Симметричные шифры AES, асимметричный протокол RSA, хеширование SHA и электронная подпись.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Безопасность баз данных SQL</h4>
+              <p>Проектирование безопасных СУБД, защита от инъекций кода (SQLi) и аудит доступа.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Беспроводные коммуникации и протоколы</h4>
+              <p>Стандарты Wi-Fi (WPA2/WPA3), Bluetooth, аудит безопасности радиочастотных каналов.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 КУРС -->
+        <div id="c3" class="tab-content">
+          <div class="curriculum-grid">
+            <div class="curriculum-item">
+              <h4>Тестирование на проникновение (Пентестинг)</h4>
+              <p>Методологии этичного хакинга, анализ уязвимостей сетевых сервисов и веб-приложений.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Центры мониторинга (SOC) и анализ угроз</h4>
+              <p>Корреляция событий в SIEM-системах, выявление вторжений и фреймворк MITRE ATT&amp;CK.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Компьютерная криминалистика (Digital Forensics)</h4>
+              <p>Извлечение цифровых доказательств, исследование дампов оперативной памяти и файловых образов.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Анализ вредоносного ПО (Reverse Engineering)</h4>
+              <p>Статический и динамический анализ подозрительных исполняемых файлов в декомпиляторе Ghidra.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 КУРС -->
+        <div id="c4" class="tab-content">
+          <div class="curriculum-grid">
+            <div class="curriculum-item">
+              <h4>Безопасность облачных технологий и контейнеров</h4>
+              <p>Конфигурирование Docker и Kubernetes, изоляция сред, защита облачных инфраструктур.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Нормативное обеспечение и стандарт ISO 27001</h4>
+              <p>Законодательство РК «Об информатизации», корпоративные политики и комплаенс.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Производственная практика в компаниях</h4>
+              <p>Стажировка в банках, операторах связи и аккредитованных лабораториях ИБ Казахстана.</p>
+            </div>
+            <div class="curriculum-item">
+              <h4>Дипломное проектирование</h4>
+              <p>Разработка и публичная защита прикладной системы киберзащиты перед экспертами отрасли.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Карьера и Трудоустройство -->
+  <section class="section-wrap" id="career">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="section-label">Трудоустройство</span>
+        <h2 class="section-title">Востребованность выпускников</h2>
+        <p class="section-desc">
+          Специалисты по информационной безопасности востребованы в банках, телеком-секторе и госорганах Казахстана.
+        </p>
+      </div>
+
+      <div class="career-grid">
+        <div class="career-box">
+          <h4>SOC Analyst</h4>
+          <div class="career-salary">от 450 000 ₸</div>
+          <p>Аналитик центра мониторинга. Анализ сетевых инцидентов и отражение угроз в режиме реального времени.</p>
+        </div>
+        <div class="career-box">
+          <h4>Penetration Tester</h4>
+          <div class="career-salary">от 650 000 ₸</div>
+          <p>Специалист по этичному хакингу. Тестирование защищенности информационных систем компаний.</p>
+        </div>
+        <div class="career-box">
+          <h4>DevSecOps Инженер</h4>
+          <div class="career-salary">от 800 000 ₸</div>
+          <p>Внедрение практик безопасности в процесс разработки ПО и защита облачных сред.</p>
+        </div>
+        <div class="career-box">
+          <h4>Аудитор ИБ</h4>
+          <div class="career-salary">от 600 000 ₸</div>
+          <p>Оценка киберрисков, внедрение международных стандартов защиты данных и комплаенс.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <p style="font-size: 0.8rem; font-weight: 700; color: var(--color-subtle); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px;">
+          Партнеры по стажировкам и работодатели выпускников
+        </p>
+        <div class="partners-flat-row">
+          <span class="partner-chip">АО «Казахтелеком»</span>
+          <span class="partner-chip">ЦАРКА (Центр анализа кибератак)</span>
+          <span class="partner-chip">Halyk Bank</span>
+          <span class="partner-chip">Kaspi.kz</span>
+          <span class="partner-chip">РГП «Государственная техническая служба» (ГТС)</span>
+          <span class="partner-chip">Astana Hub IT-компании</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Поступление и Консультация -->
+  <section class="section-wrap" id="admission">
+    <div class="container">
+      <div class="adm-card">
+        <div class="adm-grid">
+          
+          <div class="adm-details">
+            <span class="section-label">Прием документов</span>
+            <h3>Поступление на программу «Кибербезопасность»</h3>
+            <p>
+              Поступление осуществляется по результатам Единого национального тестирования (ЕНТ). Приемная комиссия Университета Коркыт Ата консультирует по всем вопросам зачисления и грантов.
+            </p>
+
+            <ul class="adm-list">
+              <li>
+                <span>&#8226;</span>
+                <div><strong>Профильные предметы:</strong> Математика + Информатика</div>
+              </li>
+              <li>
+                <span>&#8226;</span>
+                <div><strong>Пороговый балл ЕНТ:</strong> от 50 баллов (для гранта рекомендуется от 85+)</div>
+              </li>
+              <li>
+                <span>&#8226;</span>
+                <div><strong>Форма обучения:</strong> Очная дневная, 4 года (бакалавриат)</div>
+              </li>
+              <li>
+                <span>&#8226;</span>
+                <div><strong>Адрес приемной комиссии:</strong> г. Кызылорда, ул. Айтеке би, 29А, Главный учебный корпус</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flat-form">
+            <h4>Запрос на консультацию</h4>
+            <form onsubmit="event.preventDefault(); alert('Спасибо! Ваша заявка принята. Специалист приемной комиссии свяжется с вами.'); this.reset();">
+              <input type="text" class="flat-input" placeholder="Ваше имя и фамилия" required>
+              <input type="tel" class="flat-input" placeholder="Номер телефона (WhatsApp)" required>
+              <input type="number" class="flat-input" placeholder="Балл ЕНТ (если сдали)" min="0" max="140">
+              <button type="submit" class="btn-flat" style="width: 100%; border-radius: var(--radius-sm);">
+                Отправить запрос
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        <div>
+          <div class="footer-name">Кызылординский университет имени Коркыт Ата</div>
+          <div class="footer-role">Институт искусственного интеллекта &bull; Специальность «Кибербезопасность» (6B06303)</div>
+        </div>
+
+        <div>
+          <a href="tel:+77242274194" class="footer-phone-btn">
+            <span>&#9742;</span>
+            <span>+7 (7242) 27-41-94</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Кызылординский университет имени Коркыт Ата. Все права защищены.</div>
+        <div>Кызылорда, Казахстан</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    function switchCourse(courseId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(courseId).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
